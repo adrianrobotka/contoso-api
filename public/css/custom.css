@@ -1,0 +1,108 @@
+body {
+    background-color: whitesmoke;
+}
+
+#welcome-banner {
+}
+
+.container-full {
+    margin-top: 25px;
+    padding-top: 20px;
+}
+
+#pageContent .container {
+    margin-top: 40px;
+    padding-top: 20px;
+}
+
+.participant-image {
+    height: 50px;
+}
+
+#menu {
+    background-color: whitesmoke;
+}
+
+#menu.affix {
+    background-color: rgba(0, 192, 255, 1);
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+}
+
+#menu.affix-top {
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+}
+
+#menu a, #menu a:active, #menu a:visited, #menu a:hover, #menu a:focus {
+    border: 1px solid transparent;
+}
+
+#menu.affix a, #menu.affix a:active, #menu.affix a:visited, #menu.affix a:hover, #menu.affix a:focus {
+    color: black;
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+}
+
+#menu.affix a:hover {
+    background-color: #63dbff;
+    border: 1px solid #008ab4;
+}
+
+#menu a.navbar-brand, #menu a.navbar-brand:visited, #menu a.navbar-brand:active, #menu a.navbar-brand:focus, #menu a.navbar-brand:hover {
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+#pageFooter {
+    margin-top: 20px;
+    padding-top: 10px;
+    background-color: whitesmoke;
+    border-top: 1px solid #757575;
+}
+
+#menuButton {
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.alert {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+#messenger-list, #messaging-area {
+    overflow-y: scroll;
+    min-height: 500px;
+}
+
+.messenger-link div {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    box-shadow: #3c3c3c 1px 1px;
+}
+
+.messenger-link, .messenger-link:active, .messenger-link:hover, .messenger-link:visited, .messenger-link:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.messenger-link:hover div {
+    background-color: rgba(0, 178, 239, 0.3);
+}
+
+.message-instance {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    box-shadow: #3c3c3c 1px 1px;
+}
+
+textarea#message-instance {
+    overflow: hidden;
+    display: block;
+}
