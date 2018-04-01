@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Participant;
-use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -96,7 +95,7 @@ class ParticipantController extends Controller
             $participant->company = $company;
             $participant->work_title = $title;
             $participant->save();
-        } catch (Exception $e) {
+        } catch (\Throwable $e) {
             // Do not store rubbish
             $participant->delete();
 
@@ -118,6 +117,8 @@ class ParticipantController extends Controller
      */
     public function isRegisteredEmail($email)
     {
+        $email = strtolower($email);
+
         $validator = Validator::make(["email" => $email], [
             'email' => 'required|email|max:200'
         ]);

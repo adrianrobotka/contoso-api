@@ -21,4 +21,9 @@ class Organizer extends BaseAuth
     protected $hidden = [
         'password'
     ];
+
+    public function getName()
+    {
+        return $this->last_name . " " . $this->first_name;
+    }
 }

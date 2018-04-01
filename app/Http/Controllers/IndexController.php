@@ -22,9 +22,10 @@ class IndexController extends Controller
 
     public function afterLogin(Request $request)
     {
-        if ($request->user()->isAdmin())
-            return redirect(route('dashboard'));
-        else
+        if (Auth::guest())
             return redirect(route('index'));
+
+        return redirect(route('dashboard'));
+
     }
 }

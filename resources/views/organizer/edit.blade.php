@@ -1,31 +1,11 @@
 @extends('layouts.frame')
 
-@push('title', 'User: ' . $organizer->name)
+@push('title', 'Szervező: ' . $organizer->first_name . ' ' . $organizer->last_name)
 
-@push('script_after')
+    @push('script_after')
 
-<script>
-    $(function () {
-        $('form').on('submit', function (e) {
-            e.preventDefault();
-            var data = $(this).serializeArray();
 
-            $.ajax({
-                url: "{{ route('organizer.update', $organizer->id) }}",
-                method: 'PUT',
-                data: data,
-                success: function () {
-                    console.log("update sent");
-                    window.location.href = '{{ route('organizer.show', $organizer->id) }}';
-                },
-                error: function () {
-                    alert("Cannot update");
-                }
-            });
-        });
-    });
-</script>
-@endpush
+    @endpush
 
 @section('content')
     <div class="container">
@@ -33,20 +13,47 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <a href="{{ route('organizer.show', $organizer->id) }}">
+                        <a href="./">
                             <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-                        </a> User: {{ $organizer->name }}
+                        </a> Szervező: {{ $organizer->getName() }}
                     </div>
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form">
+
+                        <form class="form-horizontal"
+                              method="post"
+                              action="{{ url('admin/organizers') }}/{{ $organizer->id }}"
+                              role="form">
+                            {{ method_field('PUT') }}
+
                             {{ csrf_field() }}
 
                             <div class="form-group">
-                                <label for="name" class="col-md-4 control-label">Username</label>
+                                <label for="first_name" class="col-md-4 control-label">Keresztnév</label>
 
                                 <div class="col-md-6">
-                                    <input id="name" class="form-control" name="name"
-                                           value="{{ $organizer->name }}" required autofocus>
+                                    <input id="first_name" class="form-control" name="first_name"
+                                           value="{{ $organizer->first_name }}" required>
+
+                                    @if ($errors->has('first_name'))
+                                        <p class="text-danger">
+                                            {{ $errors->first('first_name') }}
+                                        </p>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="last_name" class="col-md-4 control-label">Vezetéknév</label>
+
+                                <div class="col-md-6">
+                                    <input id="last_name" class="form-control" name="last_name"
+                                           value="{{ $organizer->last_name }}" required>
+
+                                    @if ($errors->has('last_name'))
+                                        <p class="text-danger">
+                                            {{ $errors->first('last_name') }}
+                                        </p>
+                                    @endif
                                 </div>
                             </div>
 
@@ -56,13 +63,19 @@
                                 <div class="col-md-6">
                                     <input id="email" class="form-control" name="email"
                                            value="{{ $organizer->email }}" required>
+
+                                    @if ($errors->has('email'))
+                                        <p class="text-danger">
+                                            {{ $errors->first('email') }}
+                                        </p>
+                                    @endif
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="col-md-8 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary">
-                                        Update
+                                        Mentés
                                     </button>
                                 </div>
                             </div>

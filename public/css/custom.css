@@ -1,5 +1,11 @@
-body {
+html {
     background-color: whitesmoke;
+    background: url('../images/bg.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+body {
+    background-color: inherit;
 }
 
 #welcome-banner {
@@ -20,7 +26,7 @@ body {
 }
 
 #menu {
-    background-color: whitesmoke;
+    background-color: rgba(245, 245, 245, 0.80);
 }
 
 #menu.affix {
@@ -58,7 +64,7 @@ body {
 #pageFooter {
     margin-top: 20px;
     padding-top: 10px;
-    background-color: whitesmoke;
+    background-color: rgba(245, 245, 245, 0.70);
     border-top: 1px solid #757575;
 }
 
@@ -105,4 +111,195 @@ body {
 textarea#message-instance {
     overflow: hidden;
     display: block;
+}
+
+.image-in-box {
+    margin: 20px;
+}
+
+.image-in-box img {
+    height: 200px;
+    border: 1px solid grey;
+    border-radius: 20px;
+    box-shadow: grey 1px 1px 2px;
+}
+
+.person-row {
+    border: 1px solid grey;
+    border-radius: 10px;
+    box-shadow: grey 1px 1px 2px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgba(245, 245, 245, 0.42);
+}
+
+.person-row .name {
+    font-size: 18px;
+    padding: 10px;
+    border-bottom: 1px solid grey;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.filtering-tabs {
+    border-bottom: 1px solid #008cba;
+}
+
+.sample {
+    display: none;
+}
+
+.event-boxes {
+    margin-top: 20px;
+}
+
+.event-box {
+    border: 1px solid #008cba;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: #97bccb 1px 1px 1px;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        height: 0;
+    }
+    100% {
+        opacity: 1;
+        height: 100%;
+    }
+}
+
+.event-box img {
+    height: 100px;
+}
+
+.event-box .type-text {
+    font-size: 26px;
+}
+
+.event-box .date-row {
+    text-align: right;
+}
+
+.indefinite-identity .gate-row {
+    padding-left: 10px;
+}
+
+.event-box .confidence-row {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.event-box.valid-identity {
+    background-color: #abffab;
+}
+
+.event-box.selected-identity {
+    background-color: #eaffa2;
+}
+
+.event-box.no-identity img {
+    height: 400px;
+}
+
+.event-box.no-identity {
+    background-color: #ff9e8f;
+}
+
+.event-box.indefinite-identity {
+    background-color: #beccd7;
+}
+
+.event-box.indefinite-identity .indefinite-participant {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.event-box.indefinite-identity .type-text {
+    margin-left: 10px;
+}
+
+.event-box.indefinite-identity .date {
+    margin-right: 10px;
+}
+
+table.dataTable tbody tr {
+    background-color: rgba(245, 245, 245, 0.70);
+
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    border-top: 1px solid rgba(0, 0, 0, 0.7);
+}
+
+.panel, .panel-default > .panel-heading {
+    background-color: rgba(245, 245, 245, 0.80);
+}
+
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+    color: whitesmoke;
+}
+
+.black .dataTables_length,
+.black .dataTables_filter,
+.black .dataTables_info,
+.black .dataTables_processing,
+.black .dataTables_paginate {
+    color: black !important;
+}
+
+.pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > .disabled > span:focus, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus {
+    background-color: #cdcdcd;
+}
+
+.form-control {
+    background-color: #f6f6f6;
+}
+
+h1 {
+    color: white;
+}
+
+table.dataTable thead th, table.dataTable thead td {
+    color: white;
+}
+
+table.black.dataTable thead th, table.black.dataTable thead td {
+    color: black;
+}
+
+a {
+    color: #006fc0;
+}
+
+.text-danger {
+    color: red;
+}
+
+.index-box {
+    background-color: rgba(245, 245, 245, 0.71);
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: #999 1px 1px 2px;
+}
+
+.index-box h1 {
+    color: black;
+    margin-top: 5px;
+}
+
+.divider {
+    margin-left: 15px;
+}
+
+.table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td {
+    border: 1px solid #999;
 }

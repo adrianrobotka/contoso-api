@@ -4,7 +4,7 @@
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" id="menuButton" data-toggle="collapse"
                         data-target="#navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
+                    <span class="sr-only">Navigáció</span>
                     <span class="glyphicon glyphicon-th"></span>
                 </button>
                 @if (Auth::guest())
@@ -25,8 +25,12 @@
                     @else
                         {{-- --------------------------------- Organizer Part ------------------------------------------ --}}
 
-                        <li><a href="{{ route('organizers.index') }}">Organizers</a></li>
-                        <li><a href="{{ route('participants.index') }}">Participants</a></li>
+                        <li><a href="{{ route('dashboard') }}">Monitor</a></li>
+                        <li><a href="{{ route('log.index') }}">Napló</a></li>
+                        <li><a href="{{ route('groups.index') }}">Csoportok</a></li>
+                        <li><a href="{{ route('organizers.index') }}">Szervezők</a></li>
+                        <li><a href="{{ route('participants.index') }}">Résztvevők</a></li>
+                        <li><a href="{{ route('participant_images.index') }}">Képek</a></li>
 
 
                     <!--<li class="dropdown">
@@ -45,7 +49,7 @@
                         <li>
                             <a href="#" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                Logout
+                                Kijelentkezés
                             </a>
 
                             <form id="logout-form" action="{{ url('/logout') }}" method="POST"

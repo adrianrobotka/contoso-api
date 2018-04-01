@@ -20,19 +20,20 @@ class OrganizersTableSeeder extends Seeder
                 'created_at' => DB::raw('CURRENT_TIMESTAMP')
             ],
             [
-                'first_name' => "Ádám",
-                'last_name' => "Lencsés",
-                'email' => 'l.adam987@gmail.com',
+                'first_name' => "Ágnes",
+                'last_name' => "Suszter",
+                'email' => 'agnessuszter@gmail.com',
                 'password' => bcrypt('secret'),
                 'created_at' => DB::raw('CURRENT_TIMESTAMP')
             ],
             [
-                'first_name' => "Viktor",
-                'last_name' => "Bagány",
-                'email' => 'baganyviktor@gmail.com',
+                'first_name' => "Jury",
+                'last_name' => "Jury",
+                'email' => 'jury@contoso.tld',
                 'password' => bcrypt('secret'),
                 'created_at' => DB::raw('CURRENT_TIMESTAMP')
             ]
+
         ]);
     }
 }

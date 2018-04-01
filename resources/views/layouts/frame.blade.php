@@ -17,26 +17,7 @@
 
     <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
-    <script src="{{ url('/js/jquery.min.js') }}"></script>
-    <script src="{{ url('/js/bootstrap.min.js') }}"></script>
-
-    <script>
-        var config = {
-            baseURL: "{{ url('/') }}/",
-            debug: {{ config('app.debug', 'false') == true ? "true":"false" }},
-            csrfToken: "{{ csrf_token() }}",
-            appName: "{{ config('app.name', 'Laravel') }}"
-        };
-
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-    </script>
-
     @stack('script_before')
-    <script src="{{ url('/js/page.js') }}"></script>
 </head>
 <body>
 @include('menu')
@@ -47,10 +28,25 @@
 
 <div id="pageFooter" class="navbar-fixed-bottom">
     <div class="container text-center">
-        <p>&copy; 2017 csapatnév | Microsoft Learn to Win Contest</p>
+        <p>&copy; 2017-{{ date('Y') }} csapatnév | Szegedi Innovatív Informatika Verseny</p>
     </div>
 </div>
 
+<script src="{{ url('/js/jquery.min.js') }}"></script>
+
+<script>
+    var config = {
+        baseURL: "{{ url('/') }}/",
+        debug: {{ config('app.debug', 'false') == true ? "true":"false" }},
+        csrfToken: "{{ csrf_token() }}",
+        appName: "{{ config('app.name', 'Laravel') }}"
+    };
+</script>
+
+<script src="{{ url('/js/bootstrap.min.js') }}"></script>
+<script src="{{ url('/js/jquery.dataTables.min.js') }}"></script>
+
+<script src="{{ url('/js/page.js') }}"></script>
 @stack('script_after')
 </body>
 </html>

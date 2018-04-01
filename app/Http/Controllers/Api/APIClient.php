@@ -59,6 +59,19 @@ class APIClient
         return $response;
     }
 
+    public static function deletePerson($id)
+    {
+        $response = \Httpful\Request::delete(config('app.face_api_url') .
+            'persongroups/' .
+            config('app.face_api_default_group') .
+            '/persons/' .
+            $id)
+            ->addHeader('Ocp-Apim-Subscription-Key', config('app.face_api_key'))
+            ->send()->body;
+
+        return $response;
+    }
+
     public static function identify($faceId, $maxCandidates, $threshold)
     {
         $requestBody = [
